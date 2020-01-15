@@ -121,7 +121,11 @@ while True:
     if ball.xcor() > 340 and ball.xcor() < 350 and ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50:
         ball.setx(340)
         ball.dx *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)    # for windows
+        # For ubutu
+        # os.system("aplay", "bounce.wav")
+        # For mac
+        # os.system("afplay", "bounce.wav")
 
     if ball.xcor() < -340 and ball.xcor() > -350 and ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50:
         ball.setx(-340)
